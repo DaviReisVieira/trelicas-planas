@@ -1,1 +1,1 @@
-# trelicas-planas
+# Análise de Treliças Planas

@@ -34,18 +34,42 @@ class Element():
         self.sin = (self.n2.y - self.n1.y)/self.length
 
     def element_length(self):
+        """
+        Calculates the length of the element
+        Input: None
+        Output: Length of the element
+        """
         return math.sqrt((self.n1.x - self.n2.x)**2 + (self.n1.y - self.n2.y)**2)
     
     def connectivity_matrix(self, total_nodes):
+        """
+        Calculates the connectivity matrix of the element
+        Input: total_nodes
+            - total_nodes: Total number of nodes
+        Output: Connectivity matrix of the element
+        """
         connectivity = [0]*total_nodes
         connectivity[self.n1.id - 1] = -1
         connectivity[self.n2.id - 1] = 1
         return np.array(connectivity)
 
     def strain(self, u1, v1, u2, v2):
+        """
+        Calculates the strain of the element
+        Input: u1, v1, u2, v2
+            - u1, v1: Displacements of the first node
+            - u2, v2: Displacements of the second node
+        Output: Strain of the element
+        """
         self.strain_value = np.array([-self.cos, -self.sin,self.cos, self.sin]).dot(np.array([[u1], [v1], [u2], [v2]]))/self.length
 
     def stiffness(self,total_nodes):
+        """
+        Calculates the stiffness matrix of the element
+        Input: total_nodes
+            - total_nodes: Total number of nodes
+        Output: Stiffness matrix of the element
+        """
         array = np.array([self.connectivity_matrix(total_nodes)])
         return np.kron(array.T.dot(array), self.stiff)
     
@@ -61,11 +85,25 @@ class Solver():
         self.constraints = []
 
     def add_node(self, x,y):
+        """
+        Function to add a node to the list of nodes
+        Input: x,y
+            - x,y: coordinates of the node
+        Output: None
+        """
         new_node = Node(x,y, len(self.nodes)+1)
         self.nodes.append(new_node)
         print(f'- Added {new_node.__str__()}\n')
 
     def create_element(self, n1, n2, E, A):
+        """
+        Function to create an element
+        Input: n1, n2, E, A
+            - n1, n2: nodes of the element
+            - E: elasticity
+            - A: area
+        Output: None
+        """
         n1 = self.nodes[int(n1) - 1]
         n2 = self.nodes[int(n2) - 1]
         new_element = Element(n1, n2, len(self.elements)+1, E, A)
@@ -73,21 +111,54 @@ class Solver():
         print(f'- Added {new_element.__str__()}\n')
 
     def add_constraint(self,node,direction):
+        """
+        Function to add a constraint to the list of constraints
+        Input: node, direction
+            - node: node to be constrained
+            - direction: direction of the constraint
+        Output: None
+        """
         node = int(node)
         direction = int(direction)
         self.constraints = insert_constraints(self.constraints, node, direction)
         print(f"- Added constraint to node {node} in {'x' if direction == 1 else 'y'} direction\n")
 
     def strain(self):
+        """
+        Function to calculate the strain of the elements
+        Input: None
+        Output: None
+        """
         return np.array([el.strain_value for el in self.elements])
 
     def stiffness_sum(self):
+        """
+        Function to calculate the stiffness matrix
+        Input: None
+        Output: None
+        """
         return sum([el.stiffness(len(self.nodes)) for el in self.elements])
 
     def get_nodes(self):
+        """
+        Function to get the nodes
+        Input: None
+        Output: nodes
+            - nodes: list of nodes
+        """
         return np.array([[n.x, n.y] for n in self.nodes]).T
 
     def gauss_seidel(self, K, F, n_iterations, tolerance):
+        """
+        Function to solve the system of equations using the Gauss-Seidel method
+        Input: K, F, n_iterations, tolerance
+            - K: stiffness matrix
+            - F: force vector
+            - n_iterations: number of iterations
+            - tolerance: tolerance of the method
+        Output: u
+            - u: displacements
+        """
         x = np.zeros_like(F, dtype=np.double)
         
         for k in range(n_iterations):
@@ -97,6 +168,7 @@ class Solver():
                 
             calc_tol = np.linalg.norm(x - x_old, ord=np.inf) / np.linalg.norm(x, ord=np.inf)
             if calc_tol < tolerance:
+                print(f"Max number of iteration reached: {k} with Relative Difference {calc_tol}")
                 return x
         
         print(f"Max number of iteration reached: {k} with Relative Difference {calc_tol}")
@@ -104,7 +176,18 @@ class Solver():
         return x
 
     def solver(self, F, tolerance, max_iterations):
-        stiffness_sum = self.stiffness_sum().copy()
+        """
+        Function to solve the system of equations
+        Input: F, tolerance, max_iterations
+            - F: force vector
+            - tolerance: tolerance of the method
+            - max_iterations: maximum number of iterations
+        Output: reactions, strain, displacement
+            - reactions: reactions of the nodes
+            - strain: strain of the elements
+            - displacement: displacement of the nodes
+        """
+        stiffness_sum = self.stiffness_sum()
 
         cutted_lines_collumns = []
 

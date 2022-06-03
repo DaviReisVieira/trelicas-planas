@@ -125,7 +125,7 @@ def importa(entradaNome):
 
 def geraSaida(nome,Ft,Ut,Epsi,Fi,Ti):
     nome = nome + '.txt'
-    f = open("saida.txt","w+")
+    f = open(nome,"w+")
     f.write('Reacoes de apoio [N]\n')
     f.write(str(Ft))
     f.write('\n\nDeslocamentos [m]\n')
