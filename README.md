@@ -3,6 +3,11 @@
   <strong>Análise de Treliças Planas</strong>
 </h1>
 
+<div style='display: flex'>
+<img src="1.1.png" alt="Treli-Planas">
+<img src="2.1.png" alt="Treli-Planas">
+</div>
+
 # Membros do Time
 
 <table>
