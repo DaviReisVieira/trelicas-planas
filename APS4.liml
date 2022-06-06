@@ -1,0 +1,198 @@
+﻿<liml8>
+  <analysis type="S20" />
+  <node nid="1" x="0" y="0" z="0" />
+  <node nid="2" x="0.144" y="0.072" z="0" />
+  <node nid="3" x="0.192" y="0" z="0" />
+  <node nid="4" x="0.288" y="0.144" z="0" />
+  <node nid="5" x="0.432" y="0.072" z="0" />
+  <node nid="6" x="0.576" y="0" z="0" />
+  <node nid="7" x="0.384" y="0" z="0" />
+  <elset name="Default" color="-6710887" material="Material">
+    <elem eid="1" shape="line2" nodes="1 2" truss="true" />
+    <elem eid="2" shape="line2" nodes="2 4" truss="true" />
+    <elem eid="3" shape="line2" nodes="4 5" truss="true" />
+    <elem eid="4" shape="line2" nodes="7 5" truss="true" />
+    <elem eid="5" shape="line2" nodes="5 6" truss="true" />
+    <elem eid="6" shape="line2" nodes="6 7" truss="true" />
+    <elem eid="7" shape="line2" nodes="7 3" truss="true" />
+    <elem eid="8" shape="line2" nodes="3 1" truss="true" />
+    <elem eid="9" shape="line2" nodes="3 2" truss="true" />
+    <elem eid="10" shape="line2" nodes="3 4" truss="true" />
+    <elem eid="11" shape="line2" nodes="7 4" truss="true" />
+  </elset>
+  <displacement selection="Unnamed" axis="1">
+    <value>0</value>
+  </displacement>
+  <displacement selection="Unnamed(2)" axis="2">
+    <value>0</value>
+  </displacement>
+  <displacement selection="Unnamed(3)" axis="2">
+    <value>0</value>
+  </displacement>
+  <force selection="Unnamed(4)">
+    <x>-1300</x>
+    <y>-1600</y>
+    <z>0</z>
+  </force>
+  <force selection="Unnamed(5)">
+    <x>-1300</x>
+    <y>-1500</y>
+    <z>0</z>
+  </force>
+  <force selection="Unnamed(6)">
+    <x>-1300</x>
+    <y>-1500</y>
+    <z>0</z>
+  </force>
+  <mat mid="1" name="Material">
+    <geometric type="RectBar" recta="0.008" rectb="0.65625" />
+    <mechanical type="Isotropic" youngsmodulus="200000000000" />
+  </mat>
+  <nodeselection name="Unnamed">
+    <node nid="1" />
+  </nodeselection>
+  <nodeselection name="Unnamed(2)">
+    <node nid="1" />
+  </nodeselection>
+  <nodeselection name="Unnamed(3)">
+    <node nid="6" />
+  </nodeselection>
+  <nodeselection name="Unnamed(4)">
+    <node nid="2" />
+  </nodeselection>
+  <nodeselection name="Unnamed(5)">
+    <node nid="4" />
+  </nodeselection>
+  <nodeselection name="Unnamed(6)">
+    <node nid="5" />
+  </nodeselection>
+  <solution>
+    <analysis type="S20" />
+    <node nid="1" x="0" y="0" z="0" />
+    <node nid="2" x="0.144" y="0.072" z="0" />
+    <node nid="3" x="0.192" y="0" z="0" />
+    <node nid="4" x="0.288" y="0.144" z="0" />
+    <node nid="5" x="0.432" y="0.072" z="0" />
+    <node nid="6" x="0.576" y="0" z="0" />
+    <node nid="7" x="0.384" y="0" z="0" />
+    <elset name="Default" color="-6710887" material="Material">
+      <elem eid="1" shape="line2" nodes="1 2" truss="true" />
+      <elem eid="2" shape="line2" nodes="2 4" truss="true" />
+      <elem eid="3" shape="line2" nodes="4 5" truss="true" />
+      <elem eid="4" shape="line2" nodes="7 5" truss="true" />
+      <elem eid="5" shape="line2" nodes="5 6" truss="true" />
+      <elem eid="6" shape="line2" nodes="6 7" truss="true" />
+      <elem eid="7" shape="line2" nodes="7 3" truss="true" />
+      <elem eid="8" shape="line2" nodes="3 1" truss="true" />
+      <elem eid="9" shape="line2" nodes="3 2" truss="true" />
+      <elem eid="10" shape="line2" nodes="3 4" truss="true" />
+      <elem eid="11" shape="line2" nodes="7 4" truss="true" />
+    </elset>
+    <displacement selection="Unnamed" axis="1">
+      <value>0</value>
+    </displacement>
+    <displacement selection="Unnamed(2)" axis="2">
+      <value>0</value>
+    </displacement>
+    <displacement selection="Unnamed(3)" axis="2">
+      <value>0</value>
+    </displacement>
+    <force selection="Unnamed(4)">
+      <x>-1300</x>
+      <y>-1600</y>
+      <z>0</z>
+    </force>
+    <force selection="Unnamed(5)">
+      <x>-1300</x>
+      <y>-1500</y>
+      <z>0</z>
+    </force>
+    <force selection="Unnamed(6)">
+      <x>-1300</x>
+      <y>-1500</y>
+      <z>0</z>
+    </force>
+    <mat mid="1" name="Material">
+      <geometric type="RectBar" recta="0.008" rectb="0.65625" />
+      <mechanical type="Isotropic" youngsmodulus="200000000000" />
+    </mat>
+    <nodeselection name="Unnamed">
+      <node nid="1" />
+    </nodeselection>
+    <nodeselection name="Unnamed(2)">
+      <node nid="1" />
+    </nodeselection>
+    <nodeselection name="Unnamed(3)">
+      <node nid="6" />
+    </nodeselection>
+    <nodeselection name="Unnamed(4)">
+      <node nid="2" />
+    </nodeselection>
+    <nodeselection name="Unnamed(5)">
+      <node nid="4" />
+    </nodeselection>
+    <nodeselection name="Unnamed(6)">
+      <node nid="5" />
+    </nodeselection>
+    <table />
+    <results>
+      <stats start="2022-06-05T22:55:14.31" end="2022-06-05T22:55:14.52" duration=".21" />
+      <node nid="1" displx="0" disply="0" rotz="0" tensileforce="-2301.15111653094" stressptu="-438314.498386845" displmag="0" />
+      <node nid="2" displx="1.01264948828322E-06" disply="-4.30608831361621E-06" rotz="0" tensileforce="-4058.80418800512" stressptu="-773105.559620022" displmag="4.42355688906364E-06" />
+      <node nid="3" displx="3.7485714285714E-07" disply="-4.64646690913458E-06" rotz="0" tensileforce="787.499999999996" stressptu="149999.999999999" displmag="4.66156332309599E-06" />
+      <node nid="4" displx="2.59315808992884E-07" disply="-4.39980675036039E-06" rotz="0" tensileforce="-1439.66444386302" stressptu="-274221.798831052" displmag="4.40744190311234E-06" />
+      <node nid="5" displx="-2.97810477225496E-07" disply="-4.18200168477229E-06" rotz="0" tensileforce="-3152.25412830163" stressptu="-600429.35777174" displmag="4.19259217809025E-06" />
+      <node nid="6" displx="1.17028571428571E-06" disply="0" rotz="0" tensileforce="-191.805231718578" stressptu="-36534.3298511577" displmag="1.17028571428571E-06" />
+      <node nid="7" displx="5.75999999999996E-07" disply="-4.57258932073363E-06" rotz="0" tensileforce="1087.5" stressptu="207142.857142856" displmag="4.60872532226506E-06" />
+      <elem eid="1">
+        <localnode id="1" tensileforce="-6652.30223306186" stressptu="-1267105.18724988" />
+        <localnode id="2" tensileforce="-6652.30223306186" stressptu="-1267105.18724988" />
+      </elem>
+      <elem eid="2">
+        <localnode id="1" tensileforce="-4667.7919030308" stressptu="-889103.219624914" />
+        <localnode id="2" tensileforce="-4667.7919030308" stressptu="-889103.219624914" />
+      </elem>
+      <elem eid="3">
+        <localnode id="1" tensileforce="-3885.16811090587" stressptu="-740032.021124927" />
+        <localnode id="2" tensileforce="-3885.16811090587" stressptu="-740032.021124927" />
+      </elem>
+      <elem eid="4">
+        <localnode id="1" tensileforce="-1937.98381056189" stressptu="-369139.773440359" />
+        <localnode id="2" tensileforce="-1937.98381056189" stressptu="-369139.773440359" />
+      </elem>
+      <elem eid="5">
+        <localnode id="1" tensileforce="-3633.61046343715" stressptu="-692116.278749932" />
+        <localnode id="2" tensileforce="-3633.61046343715" stressptu="-692116.278749932" />
+      </elem>
+      <elem eid="6">
+        <localnode id="1" tensileforce="3249.99999999999" stressptu="619047.619047617" />
+        <localnode id="2" tensileforce="3249.99999999999" stressptu="619047.619047617" />
+      </elem>
+      <elem eid="7">
+        <localnode id="1" tensileforce="1099.99999999999" stressptu="209523.809523808" />
+        <localnode id="2" tensileforce="1099.99999999999" stressptu="209523.809523808" />
+      </elem>
+      <elem eid="8">
+        <localnode id="1" tensileforce="2049.99999999999" stressptu="390476.190476188" />
+        <localnode id="2" tensileforce="2049.99999999999" stressptu="390476.190476188" />
+      </elem>
+      <elem eid="9">
+        <localnode id="1" tensileforce="-856.318427922688" stressptu="-163108.271985274" />
+        <localnode id="2" tensileforce="-856.318427922688" stressptu="-163108.271985274" />
+      </elem>
+      <elem eid="10">
+        <localnode id="1" tensileforce="856.318427922691" stressptu="163108.271985275" />
+        <localnode id="2" tensileforce="856.318427922691" stressptu="163108.271985275" />
+      </elem>
+      <elem eid="11">
+        <localnode id="1" tensileforce="1937.98381056189" stressptu="369139.77344036" />
+        <localnode id="2" tensileforce="1937.98381056189" stressptu="369139.77344036" />
+      </elem>
+      <reactions>
+        <forcex nid="1" value="3900" />
+        <forcey nid="1" value="2974.99999999999" />
+        <forcey nid="6" value="1624.99999999999" />
+      </reactions>
+    </results>
+  </solution>
+</liml8>
